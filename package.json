@@ -7,9 +7,8 @@
     "dev": "nodemon src/index.ts",
     "start": "ts-node src/index.ts",
     "build": "tsc --build",
-    "prod": "npm run build && node ./dist/index.js",
-    "format": "npx prettier --write **/*.ts --config .prettierrc",
-    "postinstall": "tsc"
+    "prod": "node ./dist/index.js",
+    "format": "npx prettier --write **/*.ts --config .prettierrc"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +21,7 @@
     "@types/node": "^20.8.7",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+	  "typescript": "^5.2.2"
   }
 }
