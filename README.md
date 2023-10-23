@@ -1,0 +1,1 @@
+Another discord bot written in typescript.
