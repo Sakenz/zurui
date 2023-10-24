@@ -1,0 +1,14 @@
+{
+	"error": {
+		"cooldown": "Please wait {time} seconds before executing the command {command} again.",
+		"unknown": "There was an error executing that command."
+	},
+	"ping": {
+		"description": "Shows the bot's average ping",
+		"result": "Ping is {ping}ms"
+	},
+	"uptime": {
+		"description": "Get my current uptime",
+		"result": "My current uptime is {days} day(s), {hours} hours, {minutes} minutes, {seconds} seconds."
+	}
+}
