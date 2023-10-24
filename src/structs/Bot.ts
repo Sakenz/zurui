@@ -16,6 +16,8 @@ import { checkPermissions, PermissionResult } from "../utils/checkPermissions";
 import { config } from "../utils/config";
 import { MissingPermissionsException } from "../utils/missingPermissionsException";
 
+import getString from "../utils/data";
+
 export class Bot {
 	public commands = new Collection<string, Command>();
 	public slashCommands = new Array<ApplicationCommandDataResolvable>();
@@ -74,8 +76,10 @@ export class Bot {
 				if (now < expirationTime) {
 					const timeLeft = (expirationTime - now) / 1000;
 					return interaction.reply({
-						content: `Please wait ${timeLeft.toFixed(1)}
-						second(s) to use ${interaction.commandName} again.`,
+						content: getString("error.cooldown", {
+							time: timeLeft.toFixed(1),
+							command: interaction.commandName
+						}),
 						ephemeral: true
 					});
 				}
@@ -98,9 +102,7 @@ export class Bot {
 				if (error.message.includes("permissions")) {
 					interaction.reply({ content: error.toString(), ephemeral: true }).catch(console.error);
 				} else {
-					interaction
-						.reply({ content: "There was an error executing that command.", ephemeral: true })
-						.catch(console.error);
+					interaction.reply({ content: getString("error.unknown"), ephemeral: true }).catch(console.error);
 				}
 			}
 		});
