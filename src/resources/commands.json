@@ -15,6 +15,12 @@
 	},
 	"muteall": {
 		"description": "Mute/Unmute everyone in your vc",
-		"option": "True = Mute, False = Unmute"
+		"option": "True = Mute, False = Unmute",
+		"result": "done"
+	},
+	"purge": {
+		"description": "Delete messages in bulk (upto 2 weeks old)",
+		"option": "Number of messages to delete between 1-100",
+		"result": "Deleted {no} message(s)."
 	}
 }

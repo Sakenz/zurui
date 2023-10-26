@@ -8,7 +8,7 @@ interface JSONData {
 	[key: string]: Data;
 }
 
-const jsonData: JSONData = JSON.parse(fs.readFileSync("src/data/commands.json", "utf8"));
+const jsonData: JSONData = JSON.parse(fs.readFileSync("src/resources/commands.json", "utf8"));
 function getString(path: string, variables?: Record<string, string | number>): string {
 	const pathArray = path.split(".");
 	let current = jsonData as any;
