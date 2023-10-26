@@ -1,7 +1,9 @@
 {
 	"error": {
 		"cooldown": "Please wait {time} seconds before executing the command {command} again.",
-		"unknown": "There was an error executing that command."
+		"unknown": "There was an error executing that command.",
+		"notGuild": "You need to be in a server to execute any command.",
+		"notVoiceChannel": "You are not connected to any voice channel."
 	},
 	"ping": {
 		"description": "Shows the bot's average ping",
@@ -10,5 +12,9 @@
 	"uptime": {
 		"description": "Get my current uptime",
 		"result": "My current uptime is {days} day(s), {hours} hours, {minutes} minutes, {seconds} seconds."
+	},
+	"muteall": {
+		"description": "Mute/Unmute everyone in your vc",
+		"option": "True = Mute, False = Unmute"
 	}
 }
