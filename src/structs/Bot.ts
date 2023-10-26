@@ -89,6 +89,10 @@ export class Bot {
 			setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
 
 			try {
+				if (!interaction.guild) {
+					return interaction.reply({ content: getString("error.notGuild") });
+				}
+
 				const permissionsCheck: PermissionResult = await checkPermissions(command, interaction);
 
 				if (permissionsCheck.result) {
