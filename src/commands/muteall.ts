@@ -17,8 +17,7 @@ export default {
 			option.setName("mute").setDescription("muteall.option").setRequired(true)
 		)
 		.setDefaultMemberPermissions(PermissionFlagsBits.MuteMembers)
-	.setDMPermission(false),
-
+		.setDMPermission(false),
 	cooldown: 5,
 	execute(interaction: ChatInputCommandInteraction) {
 		const memberID: Snowflake = interaction.member!.user.id;
@@ -37,6 +36,6 @@ export default {
 			member.voice.setMute(choice);
 		}
 
-		return interaction.reply({ content: "noice" });
+		return interaction.reply({ content: getString("muteall.result") });
 	}
 };
