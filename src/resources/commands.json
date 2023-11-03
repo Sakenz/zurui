@@ -22,5 +22,9 @@
 		"description": "Delete messages in bulk (upto 2 weeks old)",
 		"option": "Number of messages to delete between 1-100",
 		"result": "Deleted {no} message(s)."
+	},
+	"realistic": {
+		"description": "Generate a meme from 'be realistic' template using given text",
+		"option": "text to insert"
 	}
 }

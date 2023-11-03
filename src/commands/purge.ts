@@ -24,7 +24,6 @@ export default {
 	cooldown: 5,
 	async execute(interaction: ChatInputCommandInteraction) {
 		const channelID: Snowflake = interaction.channelId;
-		//const channel: any = interaction.client.channels.fetch(channelID);
 
 		const channel: any = interaction.guild!.channels.cache.get(channelID)!;
 
