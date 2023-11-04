@@ -24,7 +24,11 @@
 		"result": "Deleted {no} message(s)."
 	},
 	"realistic": {
-		"description": "Generate a meme from 'be realistic' template using given text",
+		"description": "Generate a meme from 'be realistic' template",
+		"option": "text to insert"
+	},
+	"cmm": {
+		"description": "Generate a meme from 'change my mind' template",
 		"option": "text to insert"
 	}
 }

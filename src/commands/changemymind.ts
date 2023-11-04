@@ -3,12 +3,12 @@ import getString from "../utils/data";
 
 export default {
 	data: new SlashCommandBuilder()
-		.setName("realistic")
-		.setDescription(getString("realistic.description"))
+		.setName("changemymind")
+		.setDescription(getString("cmm.description"))
 		.addStringOption((option: SlashCommandStringOption) =>
 			option
 				.setName("text")
-				.setDescription(getString("realistic.option"))
+				.setDescription(getString("cmm.option"))
 				.setMinLength(1)
 				.setMaxLength(50)
 				.setRequired(true)
@@ -16,7 +16,6 @@ export default {
 	cooldown: 10,
 	execute(interaction: ChatInputCommandInteraction) {
 		const text: string = interaction.options.getString("text")!.split(" ").join("_").toLowerCase();
-
-		interaction.reply(`https://api.memegen.link/images/dragon/${text}.jpg`);
+		interaction.reply(`https://api.memegen.link/images/cmm/${text}.jpg`);
 	}
 };
