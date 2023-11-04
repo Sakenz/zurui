@@ -1,4 +1,9 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
+import {
+	AttachmentBuilder,
+	ChatInputCommandInteraction,
+	SlashCommandBuilder,
+	SlashCommandStringOption
+} from "discord.js";
 import getString from "../utils/data";
 
 export default {
@@ -16,6 +21,8 @@ export default {
 	cooldown: 10,
 	execute(interaction: ChatInputCommandInteraction) {
 		const text: string = interaction.options.getString("text")!.split(" ").join("_").toLowerCase();
-		interaction.reply(`https://api.memegen.link/images/cmm/${text}.jpg`);
+		const image: AttachmentBuilder = new AttachmentBuilder(`https://api.memegen.link/images/cmm/${text}.jpg`, { name: "cmm.jpg" });
+
+		interaction.reply({ files: [image] });
 	}
 };
