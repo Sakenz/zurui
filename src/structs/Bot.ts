@@ -51,7 +51,9 @@ export class Bot {
 			this.slashCommandsMap.set(command.default.data.name, command.default);
 		}
 
-		await rest.put(Routes.applicationCommands(this.client.user!.id), { body: this.slashCommands });
+		await rest.put(Routes.applicationCommands(this.client.user!.id), {
+			body: this.slashCommands
+		});
 	}
 
 	private async onInteractionCreate() {

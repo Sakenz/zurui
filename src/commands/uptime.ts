@@ -17,7 +17,12 @@ export default {
 
 		return interaction
 			.reply({
-				content: getString("uptime.result", { days: days, hours: hours, minutes: minutes, seconds: seconds })
+				content: getString("uptime.result", {
+					days: days,
+					hours: hours,
+					minutes: minutes,
+					seconds: seconds
+				})
 			})
 			.catch(console.error);
 	}

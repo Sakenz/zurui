@@ -6,7 +6,10 @@ export default {
 	cooldown: 10,
 	execute(interaction: ChatInputCommandInteraction) {
 		interaction
-			.reply({ content: getString("ping.result", { ping: interaction.client.ws.ping }), ephemeral: true })
+			.reply({
+				content: getString("ping.result", { ping: interaction.client.ws.ping }),
+				ephemeral: true
+			})
 			.catch(console.error);
 	}
 };
