@@ -31,6 +31,8 @@ export class Bot {
 			console.log(`${this.client.user!.username} ready!`);
 
 			this.registerSlashCommands();
+
+			console.log(`Commands have been deployed successfully!`);
 		});
 
 		this.client.on("warn", (info) => console.log(info));
@@ -42,13 +44,20 @@ export class Bot {
 	private async registerSlashCommands() {
 		const rest = new REST({ version: "9" }).setToken(config.TOKEN);
 
-		const commandFiles = readdirSync(join(__dirname, "..", "commands")).filter((file) => !file.endsWith(".map"));
+		const foldersPath: string = join(__dirname, "..", "commands");
+		const commandFolders: string[] = readdirSync(foldersPath);
 
-		for (const file of commandFiles) {
-			const command = await import(join(__dirname, "..", "commands", `${file}`));
+		for (const folder of commandFolders) {
+			const commandsPath: string = join(foldersPath, folder);
+			const commandFiles = readdirSync(commandsPath).filter((file) => !file.endsWith(".map"));
 
-			this.slashCommands.push(command.default.data);
-			this.slashCommandsMap.set(command.default.data.name, command.default);
+			for (const file of commandFiles) {
+				const filePath: string = join(commandsPath, file);
+				const command = await import(filePath);
+
+				this.slashCommands.push(command.default.data);
+				this.slashCommandsMap.set(command.default.data.name, command.default);
+			}
 		}
 
 		await rest.put(Routes.applicationCommands(this.client.user!.id), {
