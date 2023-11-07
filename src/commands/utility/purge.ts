@@ -5,7 +5,7 @@ import {
 	ChatInputCommandInteraction,
 	Snowflake
 } from "discord.js";
-import getString from "../utils/data";
+import getString from "../../utils/data";
 
 export default {
 	data: new SlashCommandBuilder()
