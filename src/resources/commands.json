@@ -30,5 +30,9 @@
 	"cmm": {
 		"description": "Generate a meme from 'change my mind' template",
 		"option": "text to insert"
+	},
+	"hear": {
+		"description": "Generate a doge meme",
+		"option": "text to insert"
 	}
 }
