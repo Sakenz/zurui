@@ -27,6 +27,6 @@ export default {
 			name: "realistic.jpg"
 		});
 
-		interaction.editReply({ files: [image] });
+		await interaction.editReply({ files: [image] });
 	}
 };

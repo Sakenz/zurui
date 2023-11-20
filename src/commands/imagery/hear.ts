@@ -8,12 +8,12 @@ import getString from "../../utils/data";
 
 export default {
 	data: new SlashCommandBuilder()
-		.setName("changemymind")
-		.setDescription(getString("cmm.description"))
+		.setName("hear")
+		.setDescription(getString("hear.description"))
 		.addStringOption((option: SlashCommandStringOption) =>
 			option
 				.setName("text")
-				.setDescription(getString("cmm.option"))
+				.setDescription(getString("hear.option"))
 				.setMinLength(1)
 				.setMaxLength(50)
 				.setRequired(true)
@@ -23,9 +23,12 @@ export default {
 		await interaction.deferReply();
 
 		const text: string = interaction.options.getString("text")!.split(" ").join("_").toLowerCase();
-		const image: AttachmentBuilder = new AttachmentBuilder(`https://api.memegen.link/images/cmm/${text}.jpg`, {
-			name: "cmm.jpg"
-		});
+		const image: AttachmentBuilder = new AttachmentBuilder(
+			`https://api.memegen.link/images/doge/did_I_just_hear/${text}~q.jpg`,
+			{
+				name: "hear.jpg"
+			}
+		);
 
 		await interaction.editReply({ files: [image] });
 	}

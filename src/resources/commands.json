@@ -6,7 +6,7 @@
 		"notVoiceChannel": "You are not connected to any voice channel."
 	},
 	"ping": {
-		"description": "Shows the bot's average ping",
+		"description": "Shows the my average ping",
 		"result": "Ping is {ping}ms"
 	},
 	"uptime": {
@@ -29,6 +29,10 @@
 	},
 	"cmm": {
 		"description": "Generate a meme from 'change my mind' template",
+		"option": "text to insert"
+	},
+	"hear": {
+		"description": "Generate a doge meme",
 		"option": "text to insert"
 	}
 }
