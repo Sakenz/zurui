@@ -14,7 +14,7 @@ export default {
 		.setName("muteall")
 		.setDescription(getString("muteall.description"))
 		.addBooleanOption((option: SlashCommandBooleanOption) =>
-			option.setName("mute").setDescription("muteall.option").setRequired(true)
+			option.setName("mute").setDescription(getString("muteall.option")).setRequired(true)
 		)
 		.setDefaultMemberPermissions(PermissionFlagsBits.MuteMembers)
 		.setDMPermission(false),
