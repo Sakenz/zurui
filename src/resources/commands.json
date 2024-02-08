@@ -33,6 +33,6 @@
 	},
 	"hear": {
 		"description": "Generate a doge meme",
-		"option": "text to insert"
+		"option": "text to insert goes here"
 	}
 }
